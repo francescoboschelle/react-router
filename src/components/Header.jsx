@@ -6,7 +6,7 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Navbar
+            ShopVerse
           </Link>
           <button
             className="navbar-toggler d-lg-none"
