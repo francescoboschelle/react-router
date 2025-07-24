@@ -1,40 +1,33 @@
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
   return (
-    <main>
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 text-white bg-primary border rounded-3">
-            <h2>Change the background</h2>
-            <p>
-              Swap the background-color utility and add a `.text-*` color
-              utility to mix up the jumbotron look. Then, mix and match with
-              additional component themes and more.
+    <main className="page-content">
+      <div className="p-5 h-100 bg-tansparent d-flex align-items-center justify-content-center">
+        <div className="container">
+          <div className="container-fluid py-5 text-white front-page-content">
+            <h1 className="display-5 fw-bold">Welcome to ShopVerse</h1>
+            <p className="col-md-8 fs-4">
+              Discover a universe of shopping at ShopVerse, your destination for
+              clothes, tech, home essentials, and more. Explore our diverse
+              selection of quality products, curated for every lifestyle and
+              need. Upgrade your everyday with the best from every category.
             </p>
-            <button class="btn btn-outline-primary" type="button">
-              Example button
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-primary border rounded-3">
-            <h2>Add borders</h2>
-            <p>
-              Or, keep it light and add a border for some added definition to
-              the boundaries of your content. Be sure to look under the hood at
-              the source HTML here as we've adjusted the alignment and sizing of
-              both column's content for equal-height.
-            </p>
-            <button
-              class="btn Swap the background-color utility and add a `.text-*` color
-                            utility to mix up the jumbotron look. Then, mix and match with
-                            additional component themes and more."
-              type="button"
+            <Link
+              className="btn btn-primary btn-lg"
+              to="/products"
+              role="button"
             >
-              Example button
-            </button>
+              Explore Collection
+            </Link>
           </div>
         </div>
       </div>
+      <img
+        src="https://picsum.photos/1920/1080"
+        alt="Background Image"
+        className="background-image"
+      />
     </main>
   );
 }
