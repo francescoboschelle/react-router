@@ -1,40 +1,37 @@
 export default function AboutUs() {
   return (
-    <main>
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 text-white bg-primary border rounded-3">
-            <h2>Change the background</h2>
-            <p>
-              Swap the background-color utility and add a `.text-*` color
-              utility to mix up the jumbotron look. Then, mix and match with
-              additional component themes and more.
-            </p>
-            <button class="btn btn-outline-primary" type="button">
-              Example button
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-primary border rounded-3">
-            <h2>Add borders</h2>
-            <p>
-              Or, keep it light and add a border for some added definition to
-              the boundaries of your content. Be sure to look under the hood at
-              the source HTML here as we've adjusted the alignment and sizing of
-              both column's content for equal-height.
-            </p>
-            <button
-              class="btn Swap the background-color utility and add a `.text-*` color
-                            utility to mix up the jumbotron look. Then, mix and match with
-                            additional component themes and more."
-              type="button"
-            >
-              Example button
-            </button>
+    <main className="page-content">
+      <div className="p-5 h-100 bg-tansparent d-flex align-items-center justify-content-center">
+        <div className="container">
+          <div className="container-fluid py-5 text-white front-page-content">
+            <h1 className="display-5 fw-bold mb-5">Contact Us</h1>
+            <div className="row justify-content-center align-items-center g-2">
+              <div className="col">
+                <p className="col-md-8 fs-4">
+                  Find us at our headquarters or reach out via email.
+                </p>
+              </div>
+              <div className="col">
+                <p className="col-md-8 fs-4">
+                  <strong>Address:</strong> 123 ShopVerse Lane, Commerce City,
+                  CA 90210
+                </p>
+              </div>
+              <div className="col">
+                <p className="col-md-8 fs-4">
+                  <strong>contact@shopverse.com</strong>
+                </p>
+                <p className="col-md-8 fs-4">+1 (555) 123-4567</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <img
+        src="https://picsum.photos/1920/1080"
+        alt="Background Image"
+        className="background-image"
+      />
     </main>
   );
 }

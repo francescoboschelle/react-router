@@ -11,20 +11,20 @@ export default function Products() {
 
   return (
     <main className="page-content">
-      <div class="container mt-5 mb-5">
-        <div class="row g-4">
-          {products.map((product) => {
+      <div className="container mt-5 mb-5">
+        <div className="row g-4">
+          {products.map((product, index) => {
             return (
-              <div class="col-4 d-flex">
-                <div class="card flex-grow-1">
+              <div className="col-4 d-flex" key={`product-${index}`}>
+                <div className="card flex-grow-1">
                   <img
-                    class="card-img-top p-3 card-img-css"
+                    className="card-img-top p-3 card-img-css"
                     src={product.image}
                     alt={product.title}
                   />
-                  <div class="card-body">
-                    <h4 class="card-title">{product.title}</h4>
-                    <p class="card-text">{product.description}</p>
+                  <div className="card-body">
+                    <h4 className="card-title">{product.title}</h4>
+                    <p className="card-text">{product.description}</p>
                   </div>
                 </div>
               </div>
