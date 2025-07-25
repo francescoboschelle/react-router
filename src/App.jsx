@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/Products";
 import AboutUs from "./pages/AboutUs";
 import ProductsDetail from "./pages/ProductsDetail";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/products" Component={ProductsPage} />
           <Route path="/about-us" Component={AboutUs} />
           <Route path="/products/:id" Component={ProductsDetail} />
+          <Route path="/not-found" Component={NotFound} />
         </Route>
       </Routes>
     </BrowserRouter>

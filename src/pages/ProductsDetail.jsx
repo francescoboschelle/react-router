@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function ProductsDetail() {
   const [product, setProduct] = useState([]);
   let params = useParams();
+  let navigate = useNavigate();
   const { id } = params;
 
   useEffect(() => {
+    if (!id || isNaN(id)) {
+      navigate("/not-found");
+      return;
+    }
+
     fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [id]);
+      .then((res) =>
+        res.json().catch(() => {
+          navigate("/not-found");
+        })
+      )
+      .then((data) => {
+        setProduct(data);
+      });
+  }, [id, navigate]);
 
   return (
     <main className="page-content">
