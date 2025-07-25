@@ -16,6 +16,7 @@ export default function App() {
           <Route path="/about-us" Component={AboutUs} />
           <Route path="/products/:id" Component={ProductsDetail} />
           <Route path="/not-found" Component={NotFound} />
+          <Route path="*" Component={NotFound} />
         </Route>
       </Routes>
     </BrowserRouter>

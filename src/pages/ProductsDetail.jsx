@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 export default function ProductsDetail() {
   const [product, setProduct] = useState([]);
@@ -8,7 +8,7 @@ export default function ProductsDetail() {
   const { id } = params;
 
   useEffect(() => {
-    if (!id || isNaN(id)) {
+    if (!id || isNaN(parseInt(id))) {
       navigate("/not-found");
       return;
     }
@@ -19,9 +19,7 @@ export default function ProductsDetail() {
           navigate("/not-found");
         })
       )
-      .then((data) => {
-        setProduct(data);
-      });
+      .then((data) => setProduct(data));
   }, [id, navigate]);
 
   return (
@@ -40,6 +38,28 @@ export default function ProductsDetail() {
             <p>{product.description}</p>
             <h3>${product.price}</h3>
             <button className="btn btn-primary">Add to Cart</button>
+            <div className="mt-3">
+              {parseInt(id) > 1 ? (
+                <Link
+                  to={`/products/${parseInt(id) - 1}`}
+                  className="btn btn-secondary me-2"
+                >
+                  Previous Product
+                </Link>
+              ) : (
+                <></>
+              )}
+              {parseInt(id) < 20 ? (
+                <Link
+                  to={`/products/${parseInt(id) + 1}`}
+                  className="btn btn-secondary "
+                >
+                  Next Product
+                </Link>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
       </div>
